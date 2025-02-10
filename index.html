@@ -11,7 +11,7 @@
         <h2>Anti-Air theme</h2>
         <div id="main">
             <div id="score">
-                <h2>Score:</h2>
+                <h2 id="count">Score: 0</h2>
             </div>
             <div id="game">
                 <div class="row">
@@ -41,13 +41,8 @@
             <div id="igor"></div>
         </div>
         <div class="io">
-            <button id="leva"><-</button>
-            <button id="desna">-></button>
-        </div>
-        <div class="io">
-            <button>Play</button>
-            <button>Pause</button>
-            <button>Restart</button>
+            <button onclick="start()">Play</button>
+            <button onclick="restart()">Restart</button>
         </div>
         <script src="script.js"></script>
     </body>
