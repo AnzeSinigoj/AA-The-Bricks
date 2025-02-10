@@ -80,6 +80,45 @@ h2 {
     height: 100%;
     border-left: 0.1vw solid white;
     border-right: 0.1vw solid white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.jet {
+    width: 7vw;
+    height: 6vw;
+    background-image: url("img/airplane.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#raketa {
+    width: 1vw;
+    height: 5vw;
+    background-image: url("img/missile.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#slider {
+    position: absolute;
+    bottom: 0.4vh;
+    transition: left 0.3s ease;
+    transition: right 0.3s ease;
+    width: 10vw;
+    height: 1vw;
+    background-color: green;
+    border: 0.5vh solid black;
+    border-radius: 5vh
 }
 
 #igor {
@@ -92,7 +131,7 @@ h2 {
 }
 
 button {
-    padding: 2vh 2vw;
+    padding: 2vh 4vw;
     border-radius: 3vh;
     background-color: #383838;
     border: 0.3vh solid rgb(42, 42, 42);
@@ -111,9 +150,9 @@ button:hover {
     gap: 0.3vw;
 }
 
-@media only screen and (max-width: 800px) and (max-resolution: 192dpi) {
+@media only screen and (max-width: 800px) and (max-device-width: 800px) {
     button {
-        padding: 2vh 10vw;
+        padding: 1.5vh 10vw;
     }
 
     #score {
