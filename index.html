@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="eng">
     <head>
         <title>AA-Bricks</title>
         <link rel="stylesheet" href="style.css">
@@ -20,20 +20,6 @@
                     <div class="jet"></div>
                     <div class="jet"></div>
                 </div>
-                <div class="row">
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                </div>
-                <div class="row">
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                    <div class="jet"></div>
-                </div>
                 <div id="raketa"></div>
                 <div id="slider"></div>
             </div>
@@ -44,6 +30,10 @@
         <div class="io">
             <button onclick="start()">Play</button>
             <button onclick="restart()">Restart</button>
+            <div id="air-raid">
+                Air Raid Intensity:
+                <input type="range" id="row-count"  min="1" max="5" step="1" value="3">
+            </div>
         </div>
         <script src="script.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

@@ -73,6 +73,7 @@ h2 {
 .row {
     display: flex;
     justify-content: center;
+    gap: 1vw;
 }
 
 .jet {
@@ -113,6 +114,7 @@ button {
     border-radius: 3vh;
     background-color: #383838;
     border: 0.3vh solid rgb(42, 42, 42);
+    font-size: 3vh;
 }
 
 button:hover {
@@ -130,19 +132,84 @@ button::focus {
     justify-content: center;
     align-items: center;
     gap: 0.3vw;
+    font-size: 3vh;
 }
 
-@media only screen and (max-width: 768px) and (orientation: portrait) {
+#air-raid {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#row-count {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15vw;
+    background: #333;
+    border-radius: 1vh;
+    outline: none;
+}
+
+#row-count::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 3vh;
+    height: 3vh;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#row-count::-moz-range-thumb {
+    width: 3vh;
+    height: 3vh;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#row-count::-ms-thumb {
+    width: 3vh;
+    height: 3vh;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#row-count:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #555; 
+}
+
+#row-count:disabled::-webkit-slider-thumb {
+    background: #999; 
+    cursor: not-allowed;
+}
+
+#row-count:disabled::-moz-range-thumb {
+    background: #999;
+    cursor: not-allowed;
+}
+
+#row-count:disabled::-ms-thumb {
+    background: #999;
+    cursor: not-allowed;
+}
+
+
+
+@media only screen and (max-width: 1200px) and (orientation: portrait) {
     button {
         padding: 1.5vh 10vw;
     }
 
     #main{
-        width: 90vw;
+        width: 95vw;
     }
 
     #game {
-        width: 90vw;
+        width: 95vw;
         align-items: center;
     }
 
@@ -152,15 +219,26 @@ button::focus {
     }
 
     #raketa {
-        width: 2vw;
-        height: 6vw;
+        width: 2.5vw;
+        height: 9vw;
     }
 
     #slider{
-        width: 15vw;
-        height: 2vw;
+        width: 23vw;
+        height: 3vw;
     }
-
+    .io{
+        font-size: 2vh;
+    }
+    button{
+        font-size: 2vh;
+    }
+    #air-raid {
+        font-size: 1.33vh;
+    }
+    #row-count {
+        width: 25vw;
+    }
 }
 
 .swal-button {

@@ -3,7 +3,18 @@ let game = document.getElementById('game');
 let raketa = document.getElementById('raketa');
 let bricks = document.getElementsByClassName('jet');
 let scoreElement = document.getElementById('count');
+let rowc = document.getElementById('row-count');
 let score = 0;
+
+const BOMBERS = `
+    <div class="row">
+        <div class="jet"></div>
+        <div class="jet"></div>
+        <div class="jet"></div>
+        <div class="jet"></div>
+        <div class="jet"></div>
+    </div>
+`;
 
 function calcSlider() { // V px
     let parentRect = game.getBoundingClientRect();
@@ -45,6 +56,8 @@ function start() {
     let gameRect = game.getBoundingClientRect();
     let initialTop = raketaRect.top - gameRect.top;
     let initialLeft = raketaRect.left - gameRect.left;
+
+    rowc.disabled = true;
 
     raketa.style.top = initialTop + 'px'; // Set initial top position
     raketa.style.left = initialLeft + 'px'; // Set initial left position
@@ -187,3 +200,21 @@ function showAlert(title, text, icon) {
         location.reload(); 
     });
 }
+
+//Vnos novih napadalcev
+
+rowc.addEventListener('input', function () {
+    let currentRows = document.querySelectorAll("#game .row"); 
+    let rowCount = parseInt(rowc.value, 10);
+
+    currentRows.forEach(row => row.remove());
+
+    for (let i = 0; i < rowCount; i++) {
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = BOMBERS;
+        const newRow = tempDiv.firstElementChild;
+        game.insertBefore(newRow, raketa);
+    }
+});
+
+rowc.dispatchEvent(new Event('input'));
