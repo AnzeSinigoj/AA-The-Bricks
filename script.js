@@ -4,6 +4,7 @@ let raketa = document.getElementById('raketa');
 let bricks = document.getElementsByClassName('jet');
 let scoreElement = document.getElementById('count');
 let rowc = document.getElementById('row-count');
+let gumb = document.getElementById('igraj_b');
 let score = 0;
 
 const BOMBERS = `
@@ -58,6 +59,7 @@ function start() {
     let initialLeft = raketaRect.left - gameRect.left;
 
     rowc.disabled = true;
+    gumb.disabled = true;
 
     raketa.style.top = initialTop + 'px'; // Set initial top position
     raketa.style.left = initialLeft + 'px'; // Set initial left position

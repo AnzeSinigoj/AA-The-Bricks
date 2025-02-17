@@ -126,6 +126,11 @@ button::focus {
     outline: none;
 }
 
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .io {
     max-width: 90vw;
     display: flex;
