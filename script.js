@@ -66,11 +66,10 @@ function moveRaketa() {
 
     // Check if raketa touches the ground (bottom of the game)
     if (newTop + raketaRect.height >= gameRect.bottom) {
-        alert("You lost");
+        showAlert("Game Over", "You lost!", "error");
         cancelAnimationFrame(animationFrameId);
         return;
     }
-
     // Check for collision with slider
     if (
         raketaRect.bottom >= sliderRect.top &&
@@ -117,7 +116,7 @@ function moveRaketa() {
 
     // Check if all jets are gone
     if (allJetsGone) {
-        alert("You win");
+        showAlert("Congratulations!", "You win!", "info");
         cancelAnimationFrame(animationFrameId);
         return;
     }
@@ -128,3 +127,63 @@ function moveRaketa() {
     animationFrameId = requestAnimationFrame(moveRaketa);
 }
 
+// Add event listeners for dragging
+let isDragging = false;
+let initialX, offsetX;
+
+slider.addEventListener('mousedown', startDrag);
+slider.addEventListener('touchstart', startDrag);
+
+document.addEventListener('mousemove', drag);
+document.addEventListener('touchmove', drag);
+
+document.addEventListener('mouseup', endDrag);
+document.addEventListener('touchend', endDrag);
+
+function startDrag(event) {
+    isDragging = true;
+    initialX = event.type === 'touchstart' ? event.touches[0].clientX : event.clientX;
+    offsetX = slider.offsetLeft;
+    event.preventDefault(); // Prevent text selection while dragging
+}
+
+function drag(event) {
+    if (!isDragging) return;
+    let currentX = event.type === 'touchmove' ? event.touches[0].clientX : event.clientX;
+    let dx = currentX - initialX;
+    let newLeft = offsetX + dx;
+
+    let gameRect = game.getBoundingClientRect();
+    let sliderRect = slider.getBoundingClientRect();
+
+    // Ensure no large jumps in position
+    slider.style.transition = 'none'; // Disable transition for immediate response
+
+    if (newLeft >= 0 && newLeft + sliderRect.width <= gameRect.width) {
+        slider.style.left = newLeft + 'px';
+    }
+
+    event.preventDefault(); // Prevent default behavior
+}
+
+function endDrag() {
+    isDragging = false;
+}
+
+function restart(){
+    location.reload();
+}
+
+function showAlert(title, text, icon) {
+    swal({
+        title: title,
+        text: text,
+        icon: icon,
+        button: {
+            text: "Play Again",
+            className: "swal-button"
+        }
+    }).then(() => {
+        location.reload(); 
+    });
+}

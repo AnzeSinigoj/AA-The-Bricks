@@ -39,9 +39,10 @@ h2 {
 
 #main {
     border: 0.1vw solid white;
-    width: 90vw;
+    width: 40vw;
     height: 70vh;
     display: flex;
+    justify-content: center;
     gap: 0.1vw;
     background-image: url("img/pano.jpg");
     background-size: cover;
@@ -50,7 +51,6 @@ h2 {
 }
 
 #score {
-    width: 30vw;
     height: 100%;
     text-align: center;
 }
@@ -77,7 +77,7 @@ h2 {
 
 .jet {
     width: 7vw;
-    height: 6vw;
+    height: 4vw;
     background-image: url("img/airplane.png");
     background-size: contain;
     background-position: center;
@@ -86,12 +86,12 @@ h2 {
 
 #raketa {
     width: 1vw;
-    height: 5vw;
+    height: 3vw;
     position: absolute;
     transition: top 0.01s linear, left 0.01s linear;
     bottom: 3.3vh;
     background-image: url("img/missile.png");
-    background-size: contain;   
+    background-size: cover;   
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -100,21 +100,13 @@ h2 {
     position: absolute;
     bottom: 0.4vh;
     transition: left 0.03s ease;
-    width: 10vw;
+    width: 7vw;
     height: 1vw;
-    background-color: green;
-    border: 0.5vh solid black;
+    background-color: #383838;
+    border: 0.4vh solid black;
     border-radius: 5vh
 }
 
-#igor {
-    width: 30vw;
-    height: 100%;
-    background-image: url("img/govori-igor.png");
-    background-size: contain;
-    background-position: bottom;
-    background-repeat: no-repeat;
-}
 
 button {
     padding: 1.5vh 4vw;
@@ -126,6 +118,10 @@ button {
 button:hover {
     opacity: 75%;
     transition: 0.3s;
+}
+
+button::focus {
+    outline: none;
 }
 
 .io {
@@ -141,8 +137,8 @@ button:hover {
         padding: 1.5vh 10vw;
     }
 
-    #score {
-        display: none;
+    #main{
+        width: 90vw;
     }
 
     #game {
@@ -152,12 +148,12 @@ button:hover {
 
     .jet {
         width: 16vw;
-        height: 15vw;
+        height: 10vw;
     }
 
     #raketa {
-        height: 6vh;
-        width: 1vh;
+        width: 2vw;
+        height: 6vw;
     }
 
     #slider{
@@ -165,7 +161,35 @@ button:hover {
         height: 2vw;
     }
 
-    #igor {
-        display: none;
-    }
+}
+
+.swal-button {
+    padding: 1.5vh 4vw;
+    border-radius: 3vh;
+    background-color: #383838;
+    border: 0.3vh solid rgb(42, 42, 42);
+    color: white;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: normal;
+}
+
+.swal-button:hover {
+    opacity: 75% !important;
+    transition: 0.3s !important;
+    background-color: #383838 !important;
+}
+
+.swal-title, .swal-text {
+    color: white; 
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: normal;
+}
+
+.swal-modal {
+    background-color: black; 
+    border-radius: 3vh; 
+}
+
+.swal-footer {
+    text-align: center; 
 }

@@ -3,6 +3,7 @@
     <head>
         <title>AA-Bricks</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.css">
         <link rel="icon" type="image/x-icon" href="img/icon.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
@@ -10,9 +11,7 @@
         <h1>The bricks</h1>
         <h2>Anti-Air theme</h2>
         <div id="main">
-            <div id="score">
-                <h2 id="count">Score: 0</h2>
-            </div>
+          
             <div id="game">
                 <div class="row">
                     <div class="jet"></div>
@@ -38,12 +37,15 @@
                 <div id="raketa"></div>
                 <div id="slider"></div>
             </div>
-            <div id="igor"></div>
+        </div>
+        <div id="score">
+            <h2 id="count">Score: 0</h2>
         </div>
         <div class="io">
             <button onclick="start()">Play</button>
             <button onclick="restart()">Restart</button>
         </div>
         <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     </body>
 </html>
