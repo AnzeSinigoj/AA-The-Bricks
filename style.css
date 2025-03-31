@@ -20,13 +20,16 @@
 }
 
 body {
-    background-color: black;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #111111, #000000);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 1vh;
 }
+
 
 h1 {
     font-size: 5vh;
@@ -45,7 +48,8 @@ h2 {
 
 #main {
     flex: 1;
-    border: 0.1vw solid white;
+    box-shadow: 0 0.5vw 5vw rgba(255, 255, 255, 0.5);
+    border: 0.3vw solid white;
     width: 40vw;
     height: 70vh;
     display: flex;
@@ -136,6 +140,7 @@ button {
     background-color: #383838;
     border: 0.3vh solid rgb(42, 42, 42);
     font-size: 3vh;
+    box-shadow: 0 0.5vw 5vw rgba(255, 255, 255, 0.5);
 }
 
 button:hover {
@@ -169,6 +174,10 @@ button:disabled {
     align-items: center;
     text-align: center;
     width: 15vw;
+}
+
+#air-raid * {
+    box-shadow: 0 0.5vw 5vw rgba(255, 255, 255, 0.5);
 }
 
 #row-count {
