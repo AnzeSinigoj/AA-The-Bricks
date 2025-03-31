@@ -229,7 +229,30 @@ button:disabled {
     cursor: not-allowed;
 }
 
+#info {
+    position: absolute;
+    top: 1%;
+    right: 1%;
 
+    width: 1vh;
+    height: 1vh;
+    padding: 1vh;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    cursor: pointer;
+    border: 0.3vh solid white;
+    border-radius: 50%;
+    
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
 
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
     #main{

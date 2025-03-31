@@ -5,6 +5,7 @@ let bricks = document.getElementsByClassName('jet');
 let scoreElement = document.getElementById('count');
 let rowc = document.getElementById('row-count');
 let gumb = document.getElementById('igraj_b');
+let info = document.getElementById('info');
 let score = 0;
 
 const BOMBERS = `
@@ -220,3 +221,7 @@ rowc.addEventListener('input', function () {
 });
 
 rowc.dispatchEvent(new Event('input'));
+
+info.addEventListener('click', function() {
+    showAlert('Information:', 'Author: Anže Šinigoj\nProject date: 31.03.2025\nProject info: A school project where we developed a \"brick-breaker\" game.', 'info');
+});
