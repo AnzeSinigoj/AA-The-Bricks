@@ -24,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 1vh;
 }
 
@@ -36,8 +37,14 @@ h2 {
     font-size: 2vh;
 }
 
+#master {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #main {
+    flex: 1;
     border: 0.1vw solid white;
     width: 40vw;
     height: 70vh;
@@ -50,9 +57,22 @@ h2 {
     background-repeat: no-repeat;
 }
 
+#io-container {
+    position: absolute; 
+    top: 50%; 
+    right: 10%; 
+    transform: translateY(-50%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #score {
     height: 100%;
     text-align: center;
+    border-bottom: 0.3vw dashed white;
+    margin-bottom: 1vw;
 }
 
 #score>h2 {
@@ -110,6 +130,7 @@ h2 {
 
 
 button {
+    width: 15vw;
     padding: 1.5vh 4vw;
     border-radius: 3vh;
     background-color: #383838;
@@ -134,32 +155,38 @@ button:disabled {
 .io {
     max-width: 90vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.3vw;
+    gap: 1vw;
     font-size: 3vh;
 }
 
 #air-raid {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: 15vw;
 }
 
 #row-count {
     -webkit-appearance: none;
     appearance: none;
-    width: 15vw;
+    max-width: 15vw;
     background: #333;
     border-radius: 1vh;
+    border-radius: 5vw;
     outline: none;
+    width: 100%;
 }
 
 #row-count::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 3vh;
-    height: 3vh;
+    width: 3vw;
+    height: 3vw;
     background: white;
     border-radius: 50%;
     cursor: pointer;
@@ -205,17 +232,22 @@ button:disabled {
 
 
 @media only screen and (max-width: 1200px) and (orientation: portrait) {
-    button {
-        padding: 1.5vh 10vw;
-    }
-
     #main{
         width: 95vw;
     }
 
     #game {
-        width: 95vw;
+        width: 97vw;
         align-items: center;
+    }
+
+    #io-container {
+        position: absolute; 
+        top: 87%; 
+        right: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
     }
 
     .jet {
@@ -232,17 +264,33 @@ button:disabled {
         width: 23vw;
         height: 3vw;
     }
+    
     .io{
+        flex-direction: row;
         font-size: 2vh;
+        width: 100%;
     }
+
     button{
         font-size: 2vh;
+        width: 17vh;
+        padding: 1vh;
+        text-align: center;
     }
+
     #air-raid {
-        font-size: 1.33vh;
-    }
-    #row-count {
         width: 25vw;
+        font-size: 1.1vh;
+    }
+
+    #row-count {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #score {
+        margin: 0;
+        margin-bottom: 1.5vh;
     }
 }
 
