@@ -223,5 +223,9 @@ rowc.addEventListener('input', function () {
 rowc.dispatchEvent(new Event('input'));
 
 info.addEventListener('click', function() {
-    showAlert('Information:', 'Author: Anže Šinigoj\nProject date: 31.03.2025\nProject info: A school project where we developed a \"brick-breaker\" game.', 'info');
+    swal({
+        title: 'Information:',
+        text: 'Author: Anže Šinigoj\nProject date: 31.03.2025\nProject info: A school project',
+        icon: 'info',
+    });
 });
