@@ -65,8 +65,8 @@ function start() {
     raketa.style.top = initialTop + 'px'; // Set initial top position
     raketa.style.left = initialLeft + 'px'; // Set initial left position
 
-    raketaDx = Math.random() > 0.5 ? 2 : -2; // Random direction
-    raketaDy = Math.random() > 0.5 ? 2 : -2; // Random direction
+    raketaDx = Math.random() > 0.5 ? 5 : -5; // Faster horizontal movement
+    raketaDy = Math.random() > 0.5 ? 5 : -5; // Faster vertical movement
 
     moveRaketa();
 }

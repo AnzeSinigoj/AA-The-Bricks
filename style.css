@@ -140,7 +140,6 @@ button {
     background-color: #383838;
     border: 0.3vh solid rgb(42, 42, 42);
     font-size: 3vh;
-    box-shadow: 0 0.5vw 5vw rgba(255, 255, 255, 0.5);
 }
 
 button:hover {
@@ -174,10 +173,6 @@ button:disabled {
     align-items: center;
     text-align: center;
     width: 15vw;
-}
-
-#air-raid * {
-    box-shadow: 0 0.5vw 5vw rgba(255, 255, 255, 0.5);
 }
 
 #row-count {
