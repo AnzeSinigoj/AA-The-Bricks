@@ -127,8 +127,8 @@ h2 {
     transition: left 0.03s ease;
     width: 7vw;
     height: 1vw;
-    background-color: #383838;
-    border: 0.4vh solid black;
+    background-color: white;
+    border: 0.5vh solid black;
     border-radius: 5vh
 }
 
@@ -271,11 +271,12 @@ button:disabled {
 
     #io-container {
         position: absolute; 
-        top: 87%; 
+        top: 87%;
         right: 0;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
+        height: fit-content;
     }
 
     .jet {

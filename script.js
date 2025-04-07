@@ -225,7 +225,7 @@ rowc.dispatchEvent(new Event('input'));
 info.addEventListener('click', function() {
     swal({
         title: 'Information:',
-        text: 'Author: Anže Šinigoj\nProject date: 31.03.2025\nProject info: A school project',
+        text: 'Author: Anže Šinigoj\nProject date: 31.03.2025\nProject origin: A school project',
         icon: 'info',
     });
 });
